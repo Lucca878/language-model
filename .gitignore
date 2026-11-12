@@ -7,3 +7,6 @@
 # Local Python environment and bytecode
 /.venv/
 __pycache__/
+
+# macOS metadata
+.DS_Store
