@@ -1,0 +1,49 @@
+project:
+  name: demo
+
+dataset:
+  path: data/input.csv
+  text_column: text
+  id_column: id
+
+sampling:
+  count: null # null means use every row
+  seed: 42
+
+run:
+  repetitions: 1
+
+llm:
+  provider: openrouter
+  name: llama-3.3
+  model: meta-llama/llama-3.3-70b-instruct
+  temperature: 0.7
+  max_tokens: null
+  response_format: json_schema
+
+storage:
+  directory: results
+  include_prompt: true
+  csv_columns:
+    session_id: metadata.session_id
+    started_at: metadata.started_at
+    received_at: metadata.received_at
+    project: metadata.project
+    task: metadata.task
+    id: metadata.statement_id
+    input: metadata.original_text
+    input_group_id: metadata.input_group_id
+    replicate_number: metadata.replicate_number
+    summary: payload.result
+    model: metadata.model
+    temperature: metadata.temperature
+    duration_ms: metadata.duration_ms
+    prompt: metadata.prompt
+    # Add an input CSV field like this: category: input.category
+
+task:
+  name: summarize
+  prompt:
+    template_file: prompts/task.txt
+  schema:
+    file: schemas/response.json

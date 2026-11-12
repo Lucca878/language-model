@@ -1,0 +1,9 @@
+# Local secrets
+/.env
+
+# Generated model outputs
+/results/
+
+# Local Python environment and bytecode
+/.venv/
+__pycache__/

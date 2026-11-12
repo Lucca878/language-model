@@ -1,0 +1,6 @@
+Summarize the input in one concise sentence. Put the summary in the `result` field.
+
+Input:
+${statement_text}
+
+Return one response that conforms to the configured JSON schema.

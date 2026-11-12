@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "string",
+      "description": "Replace this placeholder with the fields required for your task."
+    }
+  },
+  "required": ["result"],
+  "additionalProperties": false
+}
